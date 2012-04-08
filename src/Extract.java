@@ -171,27 +171,6 @@ public class Extract extends DefaultHandler {
 		}
 		attrsEle.appendChild(nameEle);
 
-		Element lTypeEle = dom.createElement("ATTRIBUTE");
-		lTypeEle.setAttribute("NAME", "link-type");
-		lTypeEle.setAttribute("ITEM-TYPE", "L");
-		lTypeEle.setAttribute("DATA-TYPE", "str");
-		for (it = myLinks.keySet().iterator(); it.hasNext();) {
-			Link o = myLinks.get(it.next());
-			if (o.type.equals("author-of")) {
-				Obj dst = myObjs.get(o.dst);
-				if (dst != null && (dst.type.equals("paper") || dst.type.equals("proceedings"))) {
-					Element aValEle = dom.createElement("ATTR-VALUE");
-					aValEle.setAttribute("ITEM-ID", o.id);
-					Element cValEle = dom.createElement("COL-VALUE");
-					cValEle.appendChild(dom.createTextNode(o.type));
-					aValEle.appendChild(cValEle);
-					lTypeEle.appendChild(aValEle);
-					System.out.println(o.type);
-				}
-			}
-		}
-		attrsEle.appendChild(lTypeEle);
-
 		root.appendChild(attrsEle);
 
 		try {
