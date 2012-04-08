@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROX3DB>
+  <OBJECTS>
+    <OBJECT ID="1"/>
+    <OBJECT ID="2"/>
+    <OBJECT ID="3"/>
+    <OBJECT ID="4"/>
+    <OBJECT ID="5"/>
+    <OBJECT ID="6"/>
+    <OBJECT ID="7"/>
+    <OBJECT ID="8"/>
+    <OBJECT ID="9"/>
+    <OBJECT ID="10"/>
+    <OBJECT ID="11"/>
+    <OBJECT ID="12"/>
+  </OBJECTS>
+  <!-- 36092506 -->
+  <LINKS>
+    <LINK ID="1" O1-ID="1" O2-ID="2"/>
+    <LINK ID="2" O1-ID="3" O2-ID="4"/>
+    <LINK ID="3" O1-ID="5" O2-ID="6"/>
+    <LINK ID="4" O1-ID="7" O2-ID="8"/>
+    <LINK ID="5" O1-ID="1" O2-ID="9"/>
+    <LINK ID="6" O1-ID="3" O2-ID="10"/>
+    <LINK ID="7" O1-ID="5" O2-ID="11"/>
+    <LINK ID="8" O1-ID="7" O2-ID="12"/>
+    <LINK ID="9" O1-ID="7" O2-ID="9"/>
+    <LINK ID="10" O1-ID="1" O2-ID="10"/>
+    <LINK ID="11" O1-ID="3" O2-ID="11"/>
+    <LINK ID="12" O1-ID="5" O2-ID="12"/>
+  </LINKS>
+  <!-- 181878074 -->
+  <ATTRIBUTES>
+    <ATTRIBUTE NAME="object-type" ITEM-TYPE="O" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="1">
+        <COL-VALUE>person</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="2">
+        <COL-VALUE>proceedings</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="3">
+        <COL-VALUE>person</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="4">
+        <COL-VALUE>proceedings</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="5">
+        <COL-VALUE>person</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="6">
+        <COL-VALUE>proceedings</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="7">
+        <COL-VALUE>person</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="8">
+        <COL-VALUE>proceedings</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="9">
+        <COL-VALUE>paper</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="10">
+        <COL-VALUE>paper</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="11">
+        <COL-VALUE>paper</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="12">
+        <COL-VALUE>paper</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+    <!-- 318070838 -->
+    <ATTRIBUTE NAME="conference" ITEM-TYPE="O" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="2">
+        <COL-VALUE>DFT</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="4">
+        <COL-VALUE>DFT</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="6">
+        <COL-VALUE>AIPR</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="8">
+        <COL-VALUE>AIPR</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+    <!-- 318931000 -->
+    <ATTRIBUTE NAME="name" ITEM-TYPE="O" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="1">
+        <COL-VALUE>Pavan Kumar Sunkara</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="3">
+        <COL-VALUE>Navap Kumar Sunkara</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="5">
+        <COL-VALUE>Pavan Ramuk Sunkara</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="7">
+        <COL-VALUE>Navap Ramuk Sunkara</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+    <!-- -->
+    <ATTRIBUTE NAME="link-type" ITEM-TYPE="L" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="1">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="2">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="3">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="4">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="5">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="6">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="7">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="8">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="9">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="10">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="11">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="12">
+        <COL-VALUE>author-of</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+  </ATTRIBUTES>
+</PROX3DB>
