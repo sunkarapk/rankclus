@@ -1,0 +1,34 @@
+<PROX3DB>
+  <OBJECTS>
+    <OBJECT ID="1"/>
+    <OBJECT ID="2"/>
+    <OBJECT ID="3"/>
+  </OBJECTS>
+  <LINKS>
+    <LINK ID="1" O1-ID="1" O2-ID="2"/>
+    <LINK ID="2" O1-ID="1" O2-ID="3"/>
+  </LINKS>
+  <ATTRIBUTES>
+    <ATTRIBUTE NAME="object-type" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="1">
+        <COL-VALUE>person</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="2">
+        <COL-VALUE>paper</COL-VALUE>
+      </ATTR-VALUE>
+      <ATTR-VALUE ITEM-ID="3">
+        <COL-VALUE>proceedings</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+    <ATTRIBUTE NAME="conference" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="3">
+        <COL-VALUE>AIPR</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+    <ATTRIBUTE NAME="name" DATA-TYPE="str">
+      <ATTR-VALUE ITEM-ID="1">
+        <COL-VALUE>Pavan Kumar Sunkara</COL-VALUE>
+      </ATTR-VALUE>
+    </ATTRIBUTE>
+  </ATTRIBUTES>
+</PROX3DB>

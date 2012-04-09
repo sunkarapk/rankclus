@@ -2,23 +2,25 @@
  * Main class for rankclus
  */
 
-import java.util.*;
-
 /**
  * @author pksunkara
- *
  */
 public class RankClus {
 
-	private static HashMap<String, Vertex> v;
-	private static HashMap<String, Edge> e;
+	private static Store s;
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new Parser("data/input.xml", v, e);
+		s = new Store();
+		System.out.println("Initialized data store!");
+
+		new Parser("data/input.xml", s);
 		System.out.println("Parsing input finished!");
+
+		s.formWxx();
+		s.formWxy();
 	}
 
 }

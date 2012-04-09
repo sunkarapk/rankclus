@@ -4,7 +4,6 @@
 
 /**
  * @author pksunkara
- *
  */
 public class Edge {
 

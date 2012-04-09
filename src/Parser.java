@@ -2,9 +2,7 @@
  * Parser.java - To parse the dataset
  */
 
-import java.io.*;
-import java.util.HashMap;
-
+import java.io.IOException;
 import javax.xml.parsers.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -12,20 +10,17 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * @author pksunkara
- *
  */
 public class Parser extends DefaultHandler {
 
-	private HashMap<String, Vertex> v;
-	private HashMap<String, Edge> e;
+	private Store s;
 
 	private int attrType = 0;
 	private String itemId = null;
 	private String text = null;
 
-	public Parser(String file, HashMap<String, Vertex> v, HashMap<String, Edge> e) {
-		this.v = v;
-		this.e = e;
+	public Parser(String file, Store s) {
+		this.s = s;
 
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 
@@ -45,7 +40,7 @@ public class Parser extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName, Attributes attr) throws SAXException {
 		if (qName.equalsIgnoreCase("LINK")) {
 			String id = attr.getValue("ID");
-			e.put(id, new Edge(id, attr.getValue("O1-ID"), attr.getValue("O2-ID")));
+			s.e.put(id, new Edge(id, attr.getValue("O1-ID"), attr.getValue("O2-ID")));
 		} else if (qName.equalsIgnoreCase("ATTRIBUTE")) {
 			String name = attr.getValue("NAME");
 			if (name.equalsIgnoreCase("object-type")) {
@@ -72,15 +67,18 @@ public class Parser extends DefaultHandler {
 		} else if(qName.equalsIgnoreCase("ATTR-VALUE")) {
 			itemId = null;
 		} else {
-			Vertex ve;
 			switch (attrType) {
 			case 1:
-				v.put(itemId, new Vertex(itemId, text));
+				if (text.equals("person")) {
+					s.author(itemId);
+				} else if (text.equals("proceedings")) {
+					s.conference(itemId);
+				} else if (text.equals("paper")) {
+					s.paper(itemId);
+				}
 				break;
 			case 2: case 3:
-				ve = v.get(itemId);
-				ve.name = text;
-				v.put(itemId, ve);
+				s.v.get(itemId).name = text;
 				break;
 			default:
 				break;
