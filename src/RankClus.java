@@ -19,6 +19,8 @@ public class RankClus {
 		new Parser("data/input.xml", s);
 		System.out.println("Parsing input finished!");
 
+		s.cleanse();
+
 		s.formWxx();
 		s.formWxy();
 	}

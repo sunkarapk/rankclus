@@ -2,8 +2,10 @@
  * Store - Data store for the program
  */
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Iterator;
 
 /**
  * @author pksunkara
@@ -19,7 +21,7 @@ public class Store {
 	public int cId = 0;
 	public HashMap<Integer, String> c;
 
-	public HashMap<String, ArrayList<String>> p;
+	public HashMap<String, Set<String>> p;
 
 	public Store() {
 		this.v = new HashMap<String, Vertex>();
@@ -27,6 +29,8 @@ public class Store {
 
 		this.a = new HashMap<Integer, String>();
 		this.c = new HashMap<Integer, String>();
+
+		this.p = new HashMap<String, Set<String>>();
 	}
 
 	public void author(String itemId) {
@@ -42,7 +46,25 @@ public class Store {
 	}
 
 	public void paper(String itemId) {
-		this.p.put(itemId, new ArrayList<String>());
+		this.p.put(itemId, new HashSet<String>());
+	}
+
+	public void cleanse() {
+		Iterator<String> it = this.e.keySet().iterator();
+		while(it.hasNext()) {
+			String key = it.next();
+			Edge val = this.e.get(key);
+			if (this.p.containsKey(val.dst)) {
+				this.p.get(val.dst).add(val.src);
+			}
+		}
+
+		it = this.p.keySet().iterator();
+		while(it.hasNext()) {
+			String key = it.next();
+			Set<String> val = this.p.get(key);
+			System.out.println(val.size());
+		}
 	}
 
 	public void formWxx() {
