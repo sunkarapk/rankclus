@@ -69,16 +69,15 @@ public class Parser extends DefaultHandler {
 		} else {
 			switch (attrType) {
 			case 1:
-				if (text.equals("person")) {
-					s.author(itemId);
-				} else if (text.equals("proceedings")) {
-					s.conference(itemId);
-				} else if (text.equals("paper")) {
+				if (text.equals("paper")) {
 					s.paper(itemId);
 				}
 				break;
-			case 2: case 3:
-				s.v.get(itemId).name = text;
+			case 2:
+				s.conference(itemId, text);
+				break;
+			case 3:
+				s.author(itemId, text);
 				break;
 			default:
 				break;
