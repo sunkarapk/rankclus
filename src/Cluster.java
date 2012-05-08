@@ -11,23 +11,20 @@ import java.util.ArrayList;
  */
 public class Cluster {
 
-	public Store s = null;
-	public int k = 0;
-	public double a = 1.0;
+	private Store s = null;
+	private int k = 0;
+	private double a = 1.0;
 
-	public final int ITER = 5;
+	private final int ITER = 5;
 
 	public ArrayList<SingleCluster> c = null;
+
+	private double [][] pi = null;
 
 	public Cluster(int k, Store s, int a) {
 		this.k = k;
 		this.s = s;
 		this.a = ((double) a)/100;
-
-		this.c = new ArrayList<SingleCluster>();
-		for (int i=0; i<k; i++) {
-			this.c.add(new SingleCluster(k));
-		}
 
 		initCluster();
 	}
@@ -67,8 +64,8 @@ public class Cluster {
 		}
 	}
 
-	public void step2() {
-		double [][] pi = new double[s.c][k];
+	private void step2() {
+		pi = new double[s.c][k];
 		double [] pz = new double[k];
 
 		for (int x=0; x<k; x++) {
@@ -105,8 +102,6 @@ public class Cluster {
 			}
 		}
 
-		new Matrix(pi).print(7, 5);
-
 		for (int x=0; x<k; x++) {
 			int cs = this.c.get(x).l.size();
 
@@ -118,35 +113,73 @@ public class Cluster {
 
 			for (int y=0; y<k; y++) {
 				this.c.get(x).s[y] /= cs;
-				System.out.println(this.c.get(x).s[y]);
 			}
-			System.out.println("");
 		}
 
 		System.gc();
 	}
 
-	public void step3() {
+	private void step3() {
+		int [] m = new int[s.c];
+
+		Iterator<String> it = this.s.v.keySet().iterator();
+		while (it.hasNext()) {
+			Vertex v = this.s.v.get(it.next());
+			if (v.type == Vertex.CONFERENCE) {
+				double min = Double.MAX_VALUE;
+
+				for (int i=0; i<k; i++) {
+					double num = 0.0, denp1 = 0.0, denp2 = 0.0;
+
+					for (int j=0; j<k; j++) {
+						num += pi[v.id][j]*this.c.get(i).s[j];
+						denp1 += Math.pow(pi[v.id][j], 2);
+						denp2 += Math.pow(this.c.get(i).s[j], 2);
+					}
+
+					double d = (1 - (num / Math.sqrt(denp1*denp2)));
+					if (d < min) {
+						min = d;
+						m[v.id] = i;
+					}
+				}
+			}
+		}
+
+		pi = null;
+		clearAll();
+		beginCluster();
+
+		for (int i=0; i<s.c; i++) {
+			this.c.get(m[i]).l.add(i);
+		}
+
+		System.gc();
 	}
 
-	public void initCluster() {
+	private void beginCluster() {
+		this.c = new ArrayList<SingleCluster>();
+		for (int i=0; i<k; i++) {
+			this.c.add(new SingleCluster(k));
+		}
+	}
+
+	private void initCluster() {
+		beginCluster();
+
 		Iterator<String> it = this.s.v.keySet().iterator();
 		int cn = 0;
 		while (it.hasNext()) {
 			Vertex v = this.s.v.get(it.next());
 			if (v.type == Vertex.CONFERENCE) {
-				int clusterNum = cn++%k;
-				assignCluster(v, clusterNum);
+				int clusterNum = cn++/k;
+				v.cluster = clusterNum;
+				this.c.get(clusterNum).l.add(v.id);
 			}
 		}
 	}
 
-	public void assignCluster(Vertex v, int n) {
-		v.cluster = n;
-		this.c.get(n).l.add(v.id);
-	}
-
-	public void clearAll() {
+	private void clearAll() {
 		for (int i=0; i<k; i++) {
 			this.c.get(i).l.clear();
 		}

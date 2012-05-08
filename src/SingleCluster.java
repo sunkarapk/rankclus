@@ -12,9 +12,9 @@ public class SingleCluster {
 
 	public ArrayList<Integer> l;
 
-	public Matrix ri;
-	public Matrix ry;
-	public Matrix rx;
+	public Matrix ri = null;
+	public Matrix ry = null;
+	public Matrix rx = null;
 
 	public double [] s;
 
