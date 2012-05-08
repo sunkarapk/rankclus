@@ -15,15 +15,15 @@ public class Store {
 	public HashMap<String, Vertex> v;
 	public HashMap<String, Edge> e;
 
-	public int aId = 0, cId = 0;
+	public int a = 0, c = 0;
 
 	public HashMap<String, String> d;
 
 	public HashMap<String, Set<String>> pa;
 	public HashMap<String, String> pc;
 
-	public int[][] wyy = null;
-	public int[][] wxy = null;
+	public double[][] wyy = null;
+	public double[][] wxy = null;
 
 	public Store() {
 		this.v = new HashMap<String, Vertex>();
@@ -36,14 +36,14 @@ public class Store {
 	}
 
 	public void author(String itemId, String name) {
-		this.v.put(itemId, new Vertex(name, aId, Vertex.PERSON));
-		this.aId++;
+		this.v.put(itemId, new Vertex(name, a, Vertex.PERSON));
+		this.a++;
 	}
 
 	public void conference(String itemId, String name) {
 		if (!this.v.containsKey(name)) {
-			this.v.put(name, new Vertex(name, this.cId, Vertex.CONFERENCE));
-			this.cId++;
+			this.v.put(name, new Vertex(name, this.c, Vertex.CONFERENCE));
+			this.c++;
 		}
 		this.d.put(itemId, name);
 	}
@@ -52,19 +52,19 @@ public class Store {
 		this.pa.put(itemId, new HashSet<String>());
 	}
 
-	public int xx(int i, int j) {
+	public double xx(int i, int j) {
 		return 0;
 	}
 
-	public int yy(int i, int j) {
+	public double yy(int i, int j) {
 		return this.wyy[i][j];
 	}
 
-	public int xy(int i, int j) {
+	public double xy(int i, int j) {
 		return this.wxy[i][j];
 	}
 
-	public int yx(int i, int j) {
+	public double yx(int i, int j) {
 		return this.wxy[j][i];
 	}
 
@@ -98,7 +98,7 @@ public class Store {
 	}
 
 	public void formWyy() {
-		this.wyy = new int[this.aId][this.aId];
+		this.wyy = new double[this.a][this.a];
 
 		Iterator<String> it = this.pa.keySet().iterator();
 		while (it.hasNext()) {
@@ -121,7 +121,7 @@ public class Store {
 	}
 
 	public void formWxy() {
-		this.wxy = new int[this.cId][this.aId];
+		this.wxy = new double[this.c][this.a];
 
 		Iterator<String> it = this.pc.keySet().iterator();
 		while (it.hasNext()) {
