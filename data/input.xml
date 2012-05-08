@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROX3DB>
   <OBJECTS>
-    <OBJECT ID="1"/>
-    <OBJECT ID="2"/>
-    <OBJECT ID="3"/>
-    <OBJECT ID="4"/>
-    <OBJECT ID="5"/>
-    <OBJECT ID="6"/>
-    <OBJECT ID="7"/>
-    <OBJECT ID="8"/>
-    <OBJECT ID="9"/>
-    <OBJECT ID="10"/>
     <OBJECT ID="11"/>
     <OBJECT ID="12"/>
     <OBJECT ID="13"/>
@@ -123,59 +113,9 @@
     <LINK ID="58" O1-ID="37" O2-ID="28"/>
     <LINK ID="59" O1-ID="38" O2-ID="29"/>
     <LINK ID="60" O1-ID="39" O2-ID="30"/>
-    <LINK ID="61" O1-ID="31" O2-ID="1"/>
-    <LINK ID="62" O1-ID="32" O2-ID="2"/>
-    <LINK ID="63" O1-ID="33" O2-ID="3"/>
-    <LINK ID="64" O1-ID="34" O2-ID="4"/>
-    <LINK ID="65" O1-ID="35" O2-ID="5"/>
-    <LINK ID="66" O1-ID="36" O2-ID="1"/>
-    <LINK ID="67" O1-ID="37" O2-ID="2"/>
-    <LINK ID="68" O1-ID="38" O2-ID="3"/>
-    <LINK ID="69" O1-ID="39" O2-ID="4"/>
-    <LINK ID="70" O1-ID="40" O2-ID="5"/>
-    <LINK ID="71" O1-ID="31" O2-ID="4"/>
-    <LINK ID="72" O1-ID="32" O2-ID="1"/>
-    <LINK ID="73" O1-ID="33" O2-ID="5"/>
-    <LINK ID="74" O1-ID="34" O2-ID="7"/>
-    <LINK ID="75" O1-ID="35" O2-ID="2"/>
-    <LINK ID="76" O1-ID="36" O2-ID="8"/>
-    <LINK ID="77" O1-ID="37" O2-ID="10"/>
-    <LINK ID="78" O1-ID="38" O2-ID="6"/>
-    <LINK ID="79" O1-ID="39" O2-ID="5"/>
-    <LINK ID="80" O1-ID="40" O2-ID="9"/>
   </LINKS>
   <ATTRIBUTES>
     <ATTRIBUTE NAME="object-type">
-      <ATTR-VALUE ITEM-ID="1">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="2">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="3">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="4">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="5">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="6">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="7">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="8">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="9">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
-      <ATTR-VALUE ITEM-ID="10">
-        <COL-VALUE>paper</COL-VALUE>
-      </ATTR-VALUE>
       <ATTR-VALUE ITEM-ID="11">
         <COL-VALUE>paper</COL-VALUE>
       </ATTR-VALUE>

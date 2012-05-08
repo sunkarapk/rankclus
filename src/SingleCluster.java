@@ -16,7 +16,10 @@ public class SingleCluster {
 	public Matrix ry;
 	public Matrix rx;
 
-	public SingleCluster() {
+	public double [] s;
+
+	public SingleCluster(int k) {
 		this.l = new ArrayList<Integer>();
+		this.s = new double[k];
 	}
 }
