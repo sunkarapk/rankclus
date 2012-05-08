@@ -38,6 +38,11 @@ public class RankClus {
 		s.build();
 		System.out.println("Building data structure finished!");
 
+		if (k>s.c) {
+			System.out.println("\nERROR: Number of clusters cannot exceed target objects\n");
+			System.exit(1);
+		}
+
 		c = new Cluster(k, s, a);
 		System.out.println("Initialized clustering!");
 

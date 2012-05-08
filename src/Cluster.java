@@ -172,7 +172,7 @@ public class Cluster {
 		while (it.hasNext()) {
 			Vertex v = this.s.v.get(it.next());
 			if (v.type == Vertex.CONFERENCE) {
-				int clusterNum = cn++/k;
+				int clusterNum = cn++%k;
 				v.cluster = clusterNum;
 				this.c.get(clusterNum).l.add(v.id);
 			}
